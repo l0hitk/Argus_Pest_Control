@@ -1,4 +1,4 @@
-  =>  Template Name    : PestKit - Pest Control Website Template
+  =>  Template Name    : Argus - Pest Control Website Template
 
   =>  Template Link    : https://htmlcodex.com/pest-control-website-template
 
