@@ -60,6 +60,7 @@
                     <div class="d-flex align-items-center justify-content-center topbar-icon">
                         <a href="https://www.facebook.com/profile.php?id=61571453806824" class="me-4"><i class="fab fa-facebook-f text-dark"></i></a>
                         <a href="https://www.instagram.com/arguspestcontrol?igsh=dHRlM3kzbmFmN3Bv" class="me-4"><i class="fab fa-instagram text-dark"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +73,7 @@
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-lg-0">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="text-primary mb-0 display-5">Argus<span class="text-white">PestControl</span><i class="fa fa-spider text-primary ms-2"></i></h1>
+                        <h1 class="text-primary mb-0 display-5">Argus<span class="text-white">PestControl</span></h1>
                     </a>
                     <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-dark"></span>
@@ -136,47 +137,64 @@
 
         
         <!-- Get In Touch Start -->
-        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay=".3s">
-            <div class="container py-5">
-                <div class="bg-light px-4 py-5 rounded">
-                    <div class="text-center">
-                        <h1 class="display-5 mb-5">Find Your Pest Control Services</h1>
-                    </div>
-                    <form class="text-center mb-4" action="#">
+       <!-- Get In Touch Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay=".3s">
+    <div class="container py-5">
+        <div class="bg-light px-4 py-5 rounded">
+            <div class="text-center">
+                <h1 class="display-5 mb-5">Find Your Pest Control Services</h1>
+            </div>
+            <form class="text-center mb-4" action="#" onsubmit="sendWhatsAppMessage(event)">
+                <div class="row g-4">
+                    <div class="col-xl-10 col-lg-12">
                         <div class="row g-4">
-                            <div class="col-xl-10 col-lg-12">
-                                <div class="row g-4">
-                                    <div class="col-md-6 col-xl-3">
-                                        <select class="form-select p-3 border-0">
-                                            <option value="Type Of Service" class="">Type Of Service</option>
-                                            <option value="Pest Control-1">Bed Bugs Control</option>
-                                            <option value="Pest Control-2">Mosquito Control</option>
-                                            <option value="Pest Control-3">Rodent Control</option>
-                                            <option value="Pest Control-4">Termite Control</option>
-                                            <option value="Pest Control-5">Wood Borer Control</option>
-                                            <option value="Pest Control-6">Cockroach Control</option>
-                                            <option value="Pest Control-7">Virus Sanitation</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3">
-                                        <input type="text" class="form-control p-3 border-0" placeholder="Name">
-                                    </div>
-                                    <div class="col-md-6 col-xl-3">
-                                        <input type="text" class="form-control p-3 border-0" placeholder="Phone">
-                                    </div>
-                                    <div class="col-md-6 col-xl-3">
-                                        <input type="email" class="form-control p-3 border-0" placeholder="Email">
-                                    </div>
-                                </div>
+                            <div class="col-md-6 col-xl-3">
+                                <select class="form-select p-3 border-0" id="serviceType">
+                                    <option value="">Type Of Service</option>
+                                    <option value="Bed Bugs Control">Bed Bugs Control</option>
+                                    <option value="Mosquito Control">Mosquito Control</option>
+                                    <option value="Rodent Control">Rodent Control</option>
+                                    <option value="Termite Control">Termite Control</option>
+                                    <option value="Wood Borer Control">Wood Borer Control</option>
+                                    <option value="Cockroach Control">Cockroach Control</option>
+                                    <option value="Virus Sanitation">Virus Sanitation</option>
+                                </select>
                             </div>
-                            <div class="col-xl-2 col-lg-12">
-                                <input type="button" class="btn btn-primary w-100 p-3 border-0" value="GET STARTED">
+                            <div class="col-md-6 col-xl-3">
+                                <input type="text" class="form-control p-3 border-0" id="name" placeholder="Name">
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <input type="text" class="form-control p-3 border-0" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <input type="email" class="form-control p-3 border-0" id="email" placeholder="Email">
                             </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="col-xl-2 col-lg-12">
+                        <input type="submit" class="btn btn-primary w-100 p-3 border-0" value="GET STARTED">
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
+    </div>
+</div>
+<!-- Get In Touch End -->
+
+<script>
+    function sendWhatsAppMessage(event) {
+        event.preventDefault();
+        const serviceType = document.getElementById('serviceType').value;
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const message = `Hello, I need pest control services. Type of Service: ${serviceType}, Name: ${name}, Phone: ${phone}, Email: ${email}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/+917090969074?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+    }
+</script>
+
         <!-- Get In Touch End -->
 
 
@@ -199,7 +217,7 @@
                         <div class="about-item overflow-hidden">
                             <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">About Argus</h5>
                             <h1 class="display-5 mb-2">World Best Pest Control Services Since 1984</h1>
-                            <p class="fs-5" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiu smod tempor incididunt ut labore dolore magna aliqua.Quis ipsum suspen disse ultrices gravida Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <p class="fs-5" style="text-align: justify;">At Argus Pest Control, we have been the trusted guardian of homes and businesses since 1984. Our decades-long commitment to excellence has earned us the reputation as the world's best pest control service. From bed bugs and mosquitoes to rodents and termites, we tackle every pest challenge with precision and expertise. Our team of certified professionals utilizes cutting-edge techniques and eco-friendly, organic products to ensure a safe and pest-free environment for you and your loved ones. Experience the Argus difference and take back control of your space today!</p>
                             <div class="row">
                                 <div class="col-3">
                                     <div class="text-center">
@@ -207,8 +225,8 @@
                                             <i class="fas fa-city fa-4x text-primary"></i>
                                         </div>
                                         <div class="my-2">
-                                            <h5>Building</h5>
-                                            <h5>Cleaning</h5>
+                                            <h5>Townships</h5>
+                                            <h5>Pest Control </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -218,8 +236,8 @@
                                             <i class="fas fa-school fa-4x text-primary"></i>
                                         </div>
                                         <div class="my-2">
-                                            <h5>Education</h5>
-                                            <h5>center</h5>
+                                            <h5>Office</h5>
+                                            <h5>Pest Control</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -229,8 +247,8 @@
                                             <i class="fas fa-warehouse fa-4x text-primary"></i>
                                         </div>
                                         <div class="my-2">
-                                            <h5>Warehouse</h5>
-                                            <h5>Cleaning</h5>
+                                            <h5>House</h5>
+                                            <h5>Pest Control</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +259,7 @@
                                         </div>
                                         <div class="my-2">
                                             <h5>Hospital</h5>
-                                            <h5>Cleaning</h5>
+                                            <h5>Pest Control</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -270,7 +288,7 @@
                                     <i class="fa fa-spider fa-3x text-primary"></i>
                                 </div>
                             </div>
-                            <h4>Spiders</h4>
+                            <h4>Bed Bugs</h4>
                             <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisc elit sed.</p>
                             <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3">Learn More</button>
                         </div>
@@ -378,33 +396,6 @@
             </div>
         </div>
         <!-- Project End -->
-
-
-       
-        <!-- Call To Action Start -->
-        <div class="container-fluid py-5 call-to-action wow fadeInUp" data-wow-delay=".3s" style="margin: 6rem 0;">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <img src="img/action.jpg" class="img-fluid w-100 rounded-circle p-5" alt="">
-                    </div>
-                    <div class="col-lg-6 my-auto">
-                        <div class="text-start mt-4">
-                            <h1 class="pb-4 text-white">Sign Up To Our Newsletter To Get The Latest Offers</h1>
-                        </div>
-                        <form method="post" action="index.html">
-                            <div class="form-group">
-                                <div class="d-flex call-btn">
-                                    <input type="search" class="form-control py-3 px-4 w-100 border-0 rounded-0 rounded-end rounded-pill" name="search-input" value="" placeholder="Enter Your Email Address" required="Please enter a valid email"/>
-                                    <button type="email" value="Search Now!" class="btn btn-primary border-0 rounded-pill rounded rounded-start px-5">Subscribe</button>
-                                </div>
-                            </div>
-                        </form>  
-                    </div>
-                </div> 
-            </div>
-        </div>
-        <!-- Call To Action End -->
 
 
        
@@ -548,10 +539,10 @@
                         <div class="footer-item">
                             <h4 class="text-white fw-bold mb-4">Services Link</h4>
                             <div class="d-flex flex-column align-items-start">
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Apartment Cleaning</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Office Cleaning</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Car Washing</a>
-                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Green Cleaning</a>
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Townships Pest Control</a>
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Office Pest Control</a>
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>House Pest Control</a>
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Hospital Pest Control</a>
                             </div>
                             
                         </div>
@@ -559,9 +550,9 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
                             <h4 class="text-white fw-bold mb-4">Contact Us</h4>
-                            <a href="" class="btn btn-link w-100 text-start ps-0 pb-3 border-bottom rounded-0"><i class="fa fa-map-marker-alt me-3"></i>123 Street, CA, USA</a>
-                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</a>
-                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-envelope me-3"></i>info@example.com</a>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 pb-3 border-bottom rounded-0"><i class="fa fa-map-marker-alt me-3"></i>Bangalore</a>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-phone-alt me-3"></i>+9197401973</a>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-envelope me-3"></i>info@arguspestcontrol.in</a>
                         </div>
                     </div>
                 </div>
@@ -576,13 +567,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                        <a href="#" class="text-primary mb-0 display-6">Pest<span class="text-white">Kit</span><i class="fa fa-spider text-primary ms-2"></i></a>
+                        <a href="#" class="text-primary mb-0 display-6">Argus<span class="text-white">PestControl</span></a>
                     </div>
                     <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61571453806824" class="me-4"><i class="fab fa-facebook-f text-dark"></i></a>
+                        <a href="https://www.instagram.com/arguspestcontrol?igsh=dHRlM3kzbmFmN3Bv" class="me-4"><i class="fab fa-instagram text-dark"></i></a>
+
                     </div>
                     <div class="col-md-4 my-auto text-center text-md-end text-white">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
