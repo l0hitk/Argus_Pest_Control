@@ -164,11 +164,7 @@
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                 <div class="rounded contact-form">
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Replace with your Access Key -->
-                        <input type="hidden" name="access_key" value="07f11ed6-12c7-46b7-a1b1-9414a3172102">
-
-                        <!-- Form Inputs. Each input must have a name="" attribute -->
+                    <form id="contactForm">
                         <div class="mb-4">
                             <input type="text" name="name" id="name" class="form-control p-3" placeholder="Your Name" required>
                         </div>
@@ -181,12 +177,6 @@
                         <div class="mb-4">
                             <textarea name="message" id="message" class="w-100 form-control p-3" rows="6" placeholder="Message" required></textarea>
                         </div>
-                        
-                        <!-- Honeypot Spam Protection -->
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                        <!-- Custom Confirmation / Success Page -->
-                        <input type="hidden" name="redirect" value="https://arguspestcontrol/thankyou.html">
 
                         <button class="btn btn-primary border-0 py-3 px-4 rounded-pill" type="submit">Send Message</button>
                     </form>
@@ -195,6 +185,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your message!');
+    });
+</script>
+
 <!-- Contact End -->
 
 
